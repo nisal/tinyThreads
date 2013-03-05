@@ -36,23 +36,27 @@
 }
 - (IBAction)myKaroButton:(id)sender {
     
-//    self.myLabel.text = @"Sleeping";
-//    sleep(7);
-//    self.myLabel.text = @"Awake";
+
     queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
  
         dispatch_async(dispatch_get_main_queue(), ^{
         
-            self.myLabel.text = @"Sleeping";
+            self.myLabel.text = @"Sleeping for 7 seconds Try Moving the slider!";
             
         });
         sleep(7);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.myLabel.text = @"WAKEY!";
+            self.myLabel.text = @"WAKEY! - See? GDC weaves magic with its threads! ;) ";
         }); 
         
     });
+}
+
+- (IBAction)hangButton:(id)sender {
+        self.myLabel.text = @"Sleeping";
+        sleep(4);
+        self.myLabel.text = @"Awake after 4 seconds - I bet you could not move the slider! ";
 }
 @end

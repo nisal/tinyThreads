@@ -14,4 +14,5 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *myLabel;
 - (IBAction)myKaroButton:(id)sender;
 
+- (IBAction)hangButton:(id)sender;
 @end
